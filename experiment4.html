@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easy DOM Project</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .para {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="heading">Welcome</h2>
+
+    <p class="para">This is a paragraph</p>
+
+    <input type="text" name="user" placeholder="Enter name">
+
+    <br><br>
+
+    <button onclick="hideText()">Hide Text</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="clearInput()">Clear Input</button>
+    <button onclick="boldText()">Bold Text</button>
+
+    <script>
+        function hideText() {
+            document.getElementById("heading").style.display = "none";
+        }
+
+        function changeColor() {
+            let x = document.getElementsByClassName("para");
+            x[0].style.color = "red";
+        }
+
+        function clearInput() {
+            let y = document.getElementsByName("user");
+            y[0].value = "";
+        }
+
+        function boldText() {
+            let z = document.getElementsByTagName("p");
+            z[0].style.fontWeight = "bold";
+        }
+    </script>
+
+</body>
+</html>
