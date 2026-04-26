@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Web Page</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #eef;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: darkblue;
+            white-space: pre; /* Important for pattern formatting */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dynamic Web Page using JavaScript</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+    <br>
+
+    <button onclick="checkNumber()">Check Even/Odd</button>
+    <button onclick="generatePattern()">Generate Pattern</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        // Conditional Logic
+        function checkNumber() {
+            let num = document.getElementById("num").value;
+
+            if (num === "") {
+                document.getElementById("output").innerHTML = "Please enter a number!";
+            } 
+            else if (num % 2 == 0) {
+                document.getElementById("output").innerHTML = num + " is Even";
+            } 
+            else {
+                document.getElementById("output").innerHTML = num + " is Odd";
+            }
+        }
+
+        // Loop + Pattern
+        function generatePattern() {
+            let num = document.getElementById("num").value;
+            let result = "";
+
+            if (num === "") {
+                document.getElementById("output").innerHTML = "Enter a number first!";
+                return;
+            }
+
+            for (let i = 1; i <= num; i++) {
+                for (let j = 1; j <= i; j++) {
+                    result += j + " ";
+                }
+                result += "\n";
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+    </script>
+
+</body>
+</html>
